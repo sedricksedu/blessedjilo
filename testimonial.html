@@ -115,13 +115,106 @@
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
+           <a href="#" class="btn btn-primary py-2 px-4 ms-lg-3 mt-3 mt-lg-0" style="height: 50px;" onclick="openPopup()">Donate <i class="fa fa-arrow-right ms-2"></i></a>
             </ul>
             <!-- Donate Button -->
-            <a href="#" class="btn btn-primary py-2 px-4 ms-lg-3 mt-3 mt-lg-0">Donate <i class="fa fa-arrow-right ms-2"></i></a>
+
+
+<!-- Popup Container -->
+<div id="donatePopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:2px solid #007bff; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000; width:400px;">
+    <h4>Bank Details</h4>
+    <div id="accordion">
+        <!-- Euro Account -->
+        <div>
+            <button class="accordion-btn" onclick="toggleAccordion('euroAccount')">Euro Account</button>
+            <div id="euroAccount" class="accordion-content" style="display:none;">
+                <p><strong>Address:</strong> Centenary Bank, Soroti Road, Bazaar A, Lira.</p>
+                <p><strong>Account Name:</strong> BJDTLI</p>
+                <p><strong>Account Number:</strong> 3100112590</p>
+                <p><strong>IBAN:</strong> DE293905000000471539</p>
+                <p><strong>Swift Code:</strong> CEBUGKA</p>
+            </div>
+        </div>
+        <hr>
+        <!-- USD Account -->
+        <div>
+            <button class="accordion-btn" onclick="toggleAccordion('usdAccount')">USD Account</button>
+            <div id="usdAccount" class="accordion-content" style="display:none;">
+                <p><strong>Address:</strong> Centenary Bank, Soroti Road, Bazaar A, Lira.</p>
+                <p><strong>Account Name:</strong> BJDTLI</p>
+                <p><strong>Account Number:</strong> 3100112589</p>
+                <p><strong>IBAN:</strong> Fed routing no 021000089 America / Feb ABA 026002561 New York</p>
+                <p><strong>Swift Code:</strong> CEBUGKA</p>
+            </div>
+        </div>
+        <hr>
+        <!-- Shilling Account -->
+        <div>
+            <button class="accordion-btn" onclick="toggleAccordion('shillingAccount')">Shilling Account</button>
+            <div id="shillingAccount" class="accordion-content" style="display:none;">
+                <p><strong>Address:</strong> Centenary Bank, Soroti Road, Bazaar A, Lira.</p>
+                <p><strong>Account Name:</strong> BJDTLI</p>
+                <p><strong>Account Number:</strong> 3100112588</p>
+                <p><strong>Branch:</strong> Lira</p>
+                <p><strong>Currency:</strong> UGX</p>
+            </div>
+        </div>
+    </div>
+    <button onclick="closePopup()" class="btn btn-danger mt-3">Close</button>
+</div>
+
+<!-- JavaScript to Handle Popup and Accordion -->
+<script>
+function openPopup() {
+    document.getElementById('donatePopup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('donatePopup').style.display = 'none';
+}
+
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const isDisplayed = content.style.display === 'block';
+    document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none'); // Close others
+    content.style.display = isDisplayed ? 'none' : 'block'; // Toggle current
+}
+</script>
+
+<!-- Style -->
+<style>
+.accordion-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.accordion-btn:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+</style>
+
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
+
+
 
 
 
