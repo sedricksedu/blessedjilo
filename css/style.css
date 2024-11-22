@@ -154,6 +154,17 @@ h6,
     vertical-align: middle;
     margin-left: 8px;
 }
+.btn-primary {
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .btn-primary {
+        width: auto; /* Optional: Keeps the button size consistent on smaller screens */
+    }
+}
+
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link  {
